@@ -1,11 +1,11 @@
-package org.firstinspires.ftc.teamcode;
+/*package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.event loop.OpMode;
+import com.qualcomm.robotcore.event.loop.OpMode;
 import com.qualcomm.robotcore.event.loop.opmode.Teleop;
 
 @Teleop()
 Public classs GamepadOpMode extends OpMode {
-    @override
+    @Override
     public void init() {
     }
 
@@ -17,3 +17,5 @@ Public classs GamepadOpMode extends OpMode {
         telemetry.addData("A button", gamepad1.a);
     }
 }
+
+ */

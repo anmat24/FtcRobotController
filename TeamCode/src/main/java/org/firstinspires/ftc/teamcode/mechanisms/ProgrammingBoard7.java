@@ -1,4 +1,4 @@
-package org.firstinsires.ftc.teamcode.mechanisms;
+package org.firstinspires.ftc.teamcode.mechanisms;
 
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -10,21 +10,21 @@ import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
-pblic class ProgrammingBoard7 {
+public class ProgrammingBoard7 {
     private DigitalChannel touchSensor;
     private DcMotor motor;
     private double ticksPerRotation;
     private Servo servo;
-    private ColorSensor colorsensor;
-    private DistanceSensor distancesensor;
+    private ColorSensor colorSensor;
+    private DistanceSensor distanceSensor;
 
-    public void init(Hardware hwMap) {
+    public void init(HardwareMap hwMap) {
         touchSensor = hwMap.get(DigitalChannel.class, "touch_sensor");
-        touchSensonr.setMode(DigitalChannel.Mode.INPUT);
+        touchSensor.setMode(DigitalChannel.Mode.INPUT);
         motor = hwMap.get(DcMotor.class, "motor");
-        motor.setMode(Dcotor.RunMode.RUN_USING_ENCODER);
+        motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         ticksPerRotation = motor.getMotorType().getTicksPerRev();
-        servo = hwMap.get(Servo.cass, "servo");
+        servo = hwMap.get(Servo.class, "servo");
 
         colorSensor = hwMap.get(ColorSensor.class, "sensor_color_distance");
         distanceSensor = hwMap.get(DistanceSensor.class, "sensor_color_distance");
