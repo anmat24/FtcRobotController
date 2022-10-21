@@ -47,8 +47,9 @@ public class DistanceColorOpMode extends OpMode {
             currentcolor = "GREEN";
         } else if (pblue > pred && pblue > pgreen)
             currentcolor = "BLUE";
-        else currentcolor = "N/A";
-
+        else () {
+            currentcolor = "N/A";
+        }
 
         telemetry.addData("COLOR: ", currentcolor);
     }
