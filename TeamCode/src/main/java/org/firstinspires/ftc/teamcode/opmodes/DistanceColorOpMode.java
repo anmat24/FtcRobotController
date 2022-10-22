@@ -1,20 +1,43 @@
 package org.firstinspires.ftc.teamcode.opmodes;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.util.ElapsedTime;
+
 
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 import org.firstinspires.ftc.teamcode.mechanisms.ProgrammingBoard7;
 
-@TeleOp()
+@Autonomous()
 public class DistanceColorOpMode extends OpMode {
+
+    private ElapsedTime runtime = new ElapsedTime();
     ProgrammingBoard7 board = new ProgrammingBoard7();
+    private double[][] colorDataTable = new double[4][3];
     @Override
     public void init() {
         board.init(hardwareMap);
     }
+    public void start(){
+        double red = board.getAmountRed();
+        double green = board.getAmountGreen();
+        double blue = board.getAmountBlue();
 
+        double sum = blue + red + green;
+
+        int pred = (int) (100 * red / sum);
+        int pgreen = (int) (100 * green / sum);
+        double pblue = (int) (100 * blue / sum);
+
+        telemetry.addData("Percent green", pgreen);
+        telemetry.addData("Percent blue", pblue);
+        telemetry.addData("Percent red", pred);
+
+        String currentcolor;
+
+
+    }
     @Override
     public void loop() {
 
@@ -47,7 +70,7 @@ public class DistanceColorOpMode extends OpMode {
             currentcolor = "GREEN";
         } else if (pblue > pred && pblue > pgreen)
             currentcolor = "BLUE";
-        else () {
+        else {
             currentcolor = "N/A";
         }
 
